@@ -7,13 +7,13 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 # Clone the repository
-RUN git clone https://github.com/Giokenal/Stremos 
+RUN git clone https://github.com/Giokenal/Stremos .
 
 # Copy the local config.json file to the container
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir - requirements.txt
+RUN pip install --no-cache-dir - r requirements.txt
 
 
 EXPOSE 8888
